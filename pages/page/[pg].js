@@ -112,8 +112,8 @@ export async function getStaticProps({ params }) {
       let totalPages = Math.round(data.total_count ? data.total_count / 25 : 0);
       return { totalPages, LatestRepos };
     })
-    .catch(() => {
-      return { totalPages: 0, LatestRepos: [] };
+    .catch((err) => {
+      console.log(err)
     });
 
   return {
